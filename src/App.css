@@ -1,38 +1,64 @@
+body {
+    background-color: lightblue;
+}
+
 .App {
-  text-align: center;
+    max-width: 480px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.add-todo {
+    display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.add-todo__input {
+    width: 70%;
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 6px 0 0 6px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.add-todo__btn {
+    cursor: pointer;
+    color: #ffffff;
+    background-color: green;
+    border: none;
+    width: 30%;
+    border-radius: 0 6px 6px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.todo {
+    list-style: none;
+    padding-left: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.todo li {
+    display: flex;
+    align-items: center;
+
+}
+
+.todo li:not(:last-child) {
+    border-bottom: 1px dashed lightskyblue;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.checkbox:checked + span {
+    text-decoration: line-through;
+}
+
+.delete-todo-item {
+    margin-left: auto;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: red;
+    border: none;
+    width: 30%;
+    padding: 10px;
+    border-radius: 6px;
+    max-width: 100px;
 }
