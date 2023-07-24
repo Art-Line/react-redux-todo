@@ -1,17 +1,22 @@
-function TodoItem({item, removeTodo,  toogleTodo}) {
+import { useDispatch } from 'react-redux';
+import { removeTodo, toogleTodo } from '../store/todoSlice';
+
+function TodoItem({item}) {
+    const dispath = useDispatch();
+
     return (
-        <li key={item.id}>
+        <li>
             <input
                 className="checkbox"
                 type="checkbox"
                 checked={item.completed}
-                onChange={() => toogleTodo(item.id)}
+                onChange={() => dispath(toogleTodo(item))}
             />
             <span>{item.text}</span>
             <button
                 className="delete-todo-item"
                 type="button"
-                onClick={() => removeTodo(item.id)}
+                onClick={() => dispath(removeTodo(item))}
             >
                 delete
             </button>
